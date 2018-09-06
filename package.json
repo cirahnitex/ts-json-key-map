@@ -1,0 +1,23 @@
+{
+  "name": "ts-json-key-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cirahnitex/ts-json-key-map.git"
+  },
+  "author": "YAN Yuchen",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cirahnitex/ts-json-key-map/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.0.3"
+  },
+  "homepage": "https://github.com/cirahnitex/ts-json-key-map#readme"
+}
