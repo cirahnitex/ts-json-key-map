@@ -1,4 +1,6 @@
-class TupleMap {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class JsonKeyMap {
     constructor() {
         this.map = new Map();
     }
@@ -33,4 +35,4 @@ class TupleMap {
         return Array.from(this.map.values());
     }
 }
-export default TupleMap;
+exports.default = JsonKeyMap;

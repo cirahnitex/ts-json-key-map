@@ -1,4 +1,4 @@
-declare class TupleMap<K, V> {
+declare class JsonKeyMap<K, V> {
     private map;
     set(key: K, value: V): this;
     get(key: K): V | undefined;
@@ -6,8 +6,8 @@ declare class TupleMap<K, V> {
     delete(key: K): boolean;
     has(key: K): boolean;
     readonly size: number;
-    forEach(callbackfn: (value: V, key: K, map: TupleMap<K, V>) => void, thisArg?: any): void;
+    forEach(callbackfn: (value: V, key: K, map: JsonKeyMap<K, V>) => void, thisArg?: any): void;
     keys(): K[];
     values(): V[];
 }
-export default TupleMap;
+export default JsonKeyMap;
