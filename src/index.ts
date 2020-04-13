@@ -1,6 +1,12 @@
 class JsonKeyMap<K, V> {
     private map = new Map<string, V>();
 
+    constructor(initialValues:Iterable<[K, V]> = []) {
+        for(const [key, value] of initialValues) {
+            this.set(key, value);
+        }
+    }
+
     set(key: K, value: V): this {
         this.map.set(JSON.stringify(key), value);
         return this;
@@ -40,6 +46,11 @@ class JsonKeyMap<K, V> {
         return Array.from(this.map.values());
     }
 
+    *[Symbol.iterator] () {
+        for(const [keyStr, value] of this.map) {
+            yield [JSON.parse(keyStr), value];
+        }
+    }
 }
 
 export default JsonKeyMap;

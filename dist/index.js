@@ -1,8 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class JsonKeyMap {
-    constructor() {
+    constructor(initialValues = []) {
         this.map = new Map();
+        for (const [key, value] of initialValues) {
+            this.set(key, value);
+        }
     }
     set(key, value) {
         this.map.set(JSON.stringify(key), value);
@@ -33,6 +36,11 @@ class JsonKeyMap {
     }
     values() {
         return Array.from(this.map.values());
+    }
+    *[Symbol.iterator]() {
+        for (const [keyStr, value] of this.map) {
+            yield [JSON.parse(keyStr), value];
+        }
     }
 }
 exports.default = JsonKeyMap;

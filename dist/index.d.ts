@@ -1,5 +1,6 @@
 declare class JsonKeyMap<K, V> {
     private map;
+    constructor(initialValues?: Iterable<[K, V]>);
     set(key: K, value: V): this;
     get(key: K): V | undefined;
     clear(): void;
@@ -9,5 +10,6 @@ declare class JsonKeyMap<K, V> {
     forEach(callbackfn: (value: V, key: K, map: JsonKeyMap<K, V>) => void, thisArg?: any): void;
     keys(): K[];
     values(): V[];
+    [Symbol.iterator](): IterableIterator<any[]>;
 }
 export default JsonKeyMap;
